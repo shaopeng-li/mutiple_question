@@ -32,7 +32,6 @@ export class QuestionsComponent implements OnInit {
 
   // fire when user select specific answer
   onClick(sel) {
-
     //call udpateAnswer udpate anwser list within service
   	this.qs.updateAnswer(this.id, sel);
 
@@ -58,10 +57,12 @@ export class QuestionsComponent implements OnInit {
   	this._location.back();
   }
 
+  // update condition to show forward button
   showForwardBtn(): boolean {
     return +this.id < this.qs.getNumberOfQuestions();
   }
 
+  // fire when chlick back forward, nav to next page
   navForward() {
     this.qs.answeredQestion(this.id);
     this.router.navigate(['questions', +this.id + 1]);

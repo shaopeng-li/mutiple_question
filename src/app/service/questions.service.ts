@@ -65,6 +65,7 @@ export class questionsService{
 		} , 0);
 	}
 
+	// fallback function set eval answer to 0 if it is skipped
 	public answeredQestion(page): void {
 		if (this.answer.length != +page) {
 			this.answer.push(0);
