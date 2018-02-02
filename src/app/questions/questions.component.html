@@ -1,0 +1,19 @@
+<div class="container row">
+	<div class="outer col-md-8 col-md-offset-2">
+        <div *ngIf="showBackBtn()" class="backnav col-md-1">
+			<img src="../../assets/prev.jpg" (click)="navBack()">
+		</div>
+		<div class="question">
+			<p>{{q}}</p>
+		</div>
+		<div class="button-group">
+  			<button type="button" class="btn btn-primary" *ngFor="let answer of answers" (click)="onClick(answer)">{{answer}}</button>
+		</div>
+	</div>
+
+	<div *ngIf="showResult" class="result col-md-4 col-md-offset-4">
+		<p>Your final score is : {{result}}</p>
+	</div>
+</div>
+
+

@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.7.
 
+## overview
+
+A user is taken through a series of multiple choice questions and being assessed based on the options chosen.
+-Create a JSON structure to iterate through the questions. Set a score for each options (1, 2, 3 etc)
+-User can navigate back and forth and can change their choices (see visuals within folder screenshots)
+-There is only single route for all questions (/assessment)
+-On the last page display final score (no visuals provided)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
