@@ -44,9 +44,9 @@ export class questionsService{
 		return as[sel];
 	}
 
-	// receive selected page, return boolean value check if have more question
-	public haveMoreQuestion(id): boolean {
-		return Object.keys(this.questionSet).length > id;
+	// receive selected page, return numeric value check if have more question
+	public getNumberOfQuestions() {
+		return Object.keys(this.questionSet).length;
 	}
 
 	// caculate final test score, return score
@@ -54,5 +54,11 @@ export class questionsService{
 		return this.answer.reduce( (acc, cur) => {
 			return acc + cur;
 		} , 0);
+	}
+
+	public answeredQestion(page): void {
+		if (this.answer.length != +page) {
+			this.answer.push(0);
+		}
 	}
 }

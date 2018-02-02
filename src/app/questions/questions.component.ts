@@ -11,14 +11,17 @@ import {Location} from '@angular/common';
 export class QuestionsComponent implements OnInit {
 	q = '';
 	id = '';
+  total = 0;
   answers = [];
 	showResult: boolean = false;
-	showNav: boolean = false;
 	result: Number;
 
   constructor(private router: Router, private route: ActivatedRoute, private qs: questionsService, private _location: Location) { }
 
   ngOnInit() {
+    // get total number of question set have
+    this.total = this.qs.getNumberOfQuestions();
+
     //subscribe router params and get updated quesiton and answers list form service
   	this.route.params.subscribe( (params: Params) => {
   		this.id = params["id"];
@@ -34,7 +37,7 @@ export class QuestionsComponent implements OnInit {
   	this.qs.updateAnswer(this.id, sel);
 
     // judge if has more test, if has more test jump to next one, otherwise, show result
-  	if(this.qs.haveMoreQuestion(this.id)) {
+  	if(this.qs.getNumberOfQuestions() > +this.id) {
   		this.router.navigate(['questions', +this.id + 1]);
   		this.showResult = false;
   	} else {
@@ -53,6 +56,15 @@ export class QuestionsComponent implements OnInit {
   navBack() {
   	this.showResult = false;
   	this._location.back();
+  }
+
+  showForwardBtn(): boolean {
+    return +this.id < this.qs.getNumberOfQuestions();
+  }
+
+  navForward() {
+    this.qs.answeredQestion(this.id);
+    this.router.navigate(['questions', +this.id + 1]);
   }
 
 }

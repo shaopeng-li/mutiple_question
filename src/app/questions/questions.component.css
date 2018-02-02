@@ -15,6 +15,14 @@
 	margin-top: 20px;
 }
 
+.forwardnav {
+	transform: rotateY(180deg);
+}
+
+img {
+	width: 25px;
+}
+
 button	{
 	border: 1px solid grey;
 	border-radius: 10px;
