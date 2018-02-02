@@ -9,11 +9,20 @@ export class questionsService{
 		"What is typescript?": {
 			"javascript": 1,
 			"css": 2,
-			"js lib": 3
+			"js lib": 3,
+			"a programming language": 0
 		},
 		"What is react?": {
 			"js lib": 1,
-			"js framework": 2
+			"js framework": 2,
+			"css framework": -1,
+			"have no idea": 0
+		}, 
+		"Who is current prisident of United State": {
+			"George Bush": 1,
+			"Hillary Clinton": 2,
+			"Barack Obama": 3,
+			"Donald Trump": 4
 		}
 	};
 
