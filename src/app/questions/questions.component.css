@@ -1,3 +1,7 @@
+.container {
+	font-family: serif;
+}
+
 .outer {
 	border: 1px solid grey;
 	border-radius: 10px;
@@ -25,7 +29,10 @@ img {
 
 button	{
 	border: 1px solid grey;
-	border-radius: 10px;
+	border-radius: 15px;
+	background-color: #e7e7e7;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 	margin: 0 10px;
 	font-size: 2rem;
+	padding: 25px;
 }
